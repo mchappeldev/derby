@@ -1,10 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dh01ccc1muaky"]
+[gd_scene load_steps=4 format=3 uid="uid://dh01ccc1muaky"]
 
 [ext_resource type="Script" path="res://menu/menu.gd" id="1_gtjfl"]
 [ext_resource type="PackedScene" uid="uid://co5tj6nx3k6eh" path="res://menu/menu_button.tscn" id="2_6lrtn"]
-[ext_resource type="PackedScene" uid="uid://ccnw7b5wpkvwi" path="res://game1/game1.tscn" id="3_47wrv"]
-[ext_resource type="PackedScene" uid="uid://bh5fqwqml7qvp" path="res://game2/game2.tscn" id="4_s0ayy"]
-[ext_resource type="PackedScene" uid="uid://cj5fu8flysxp3" path="res://game3/game3.tscn" id="5_ywsn8"]
+[ext_resource type="PackedScene" uid="uid://cn2xfb3q1u5lk" path="res://game1/game_1.tscn" id="3_ulqrd"]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_gtjfl")
@@ -30,21 +28,11 @@ layout_mode = 2
 
 [node name="Title" type="RichTextLabel" parent="Control/MarginContainer/BoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "Horsey Game Collection
-"
+text = "Derby Acres"
 fit_content = true
 autowrap_mode = 0
 
 [node name="Game1Button" parent="Control/MarginContainer/BoxContainer/VBoxContainer" groups=["menu_buttons"] instance=ExtResource("2_6lrtn")]
 layout_mode = 2
-scene = ExtResource("3_47wrv")
-
-[node name="Game2Button" parent="Control/MarginContainer/BoxContainer/VBoxContainer" groups=["menu_buttons"] instance=ExtResource("2_6lrtn")]
-layout_mode = 2
-text = "Game 2"
-scene = ExtResource("4_s0ayy")
-
-[node name="Game3Button" parent="Control/MarginContainer/BoxContainer/VBoxContainer" groups=["menu_buttons"] instance=ExtResource("2_6lrtn")]
-layout_mode = 2
-text = "Game 3"
-scene = ExtResource("5_ywsn8")
+text = "Start"
+scene = ExtResource("3_ulqrd")

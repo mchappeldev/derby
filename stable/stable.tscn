@@ -1,0 +1,139 @@
+[gd_scene load_steps=2 format=3 uid="uid://dinoc61sxt5cf"]
+
+[ext_resource type="Script" path="res://stable/stable.gd" id="1_p2nvk"]
+
+[node name="Stable" type="Node2D"]
+script = ExtResource("1_p2nvk")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control"]
+custom_minimum_size = Vector2(1200, 880)
+layout_mode = 0
+offset_right = 1200.0
+offset_bottom = 880.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="MoneyVBox" type="VBoxContainer" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MoneyLabel" type="Label" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer/MoneyVBox"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+text = "Money"
+
+[node name="MoneyAmount" type="Label" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer/MoneyVBox"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+text = "$10"
+
+[node name="ExperienceVBox" type="VBoxContainer" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ExperienceLabel" type="Label" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer/ExperienceVBox"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+text = "Experience"
+
+[node name="ExperienceAmount" type="Label" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/HBoxContainer/ExperienceVBox"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+text = "10"
+
+[node name="SpeedHBox" type="HBoxContainer" parent="CanvasLayer/Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/SpeedHBox"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "Speed:"
+
+[node name="SpeedAmount" type="Label" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/SpeedHBox"]
+layout_mode = 2
+text = "8"
+
+[node name="AddSpeedButton" type="Button" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/SpeedHBox"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+text = "+"
+
+[node name="EnduranceHBox" type="HBoxContainer" parent="CanvasLayer/Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/EnduranceHBox"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "Endurance:"
+
+[node name="EnduranceAmount" type="Label" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/EnduranceHBox"]
+layout_mode = 2
+text = "8"
+
+[node name="AddEnduranceButton" type="Button" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/EnduranceHBox"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+text = "+"
+
+[node name="JumpHBox" type="HBoxContainer" parent="CanvasLayer/Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/JumpHBox"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "Jump:"
+
+[node name="JumpAmount" type="Label" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/JumpHBox"]
+layout_mode = 2
+text = "8"
+
+[node name="AddJumpButton" type="Button" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/JumpHBox"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+text = "+"
+
+[node name="RaceHBox" type="VBoxContainer" parent="CanvasLayer/Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="SlowRaceButton" type="Button" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/RaceHBox"]
+layout_mode = 2
+text = "Slow Race (Free)"
+
+[node name="QuickRaceButton" type="Button" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/RaceHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Quick Race ($50)"
+
+[node name="FastRaceButton" type="Button" parent="CanvasLayer/Control/MarginContainer/VBoxContainer/RaceHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Fast Race ($500)"
+
+[connection signal="pressed" from="CanvasLayer/Control/MarginContainer/VBoxContainer/SpeedHBox/AddSpeedButton" to="." method="_on_add_speed_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/MarginContainer/VBoxContainer/EnduranceHBox/AddEnduranceButton" to="." method="_on_add_endurance_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/MarginContainer/VBoxContainer/JumpHBox/AddJumpButton" to="." method="_on_add_jump_button_pressed"]

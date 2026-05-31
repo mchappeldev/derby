@@ -1,11 +1,26 @@
 extends Node2D
 
+@onready var winner_text = $Ui/Control/MarginContainer/BoxContainer/VBoxContainer/Winner
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	$Area2D.race_finished.connect(_on_race_finished)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_race_finished(winner: Node) -> void:
+	#get_tree().paused = true
+	calculate_experience(winner)
+	$Ui.visible = true
+
+func calculate_experience(winner: Node) -> void:
+	var exp_gained: int
+	var money_gained: int = 0
+	if winner.type == horse.horse_type.player:
+		exp_gained = Global.RACES[Global.race_difficulty]["exp_win"]
+		money_gained = Global.RACES[Global.race_difficulty]["reward_win"]
+		Global.money += money_gained
+		Global.experience += exp_gained
+	else:
+		exp_gained = Global.RACES[Global.race_difficulty]["exp_lose"]
+		Global.experience += exp_gained
+	winner_text.text = "Winner is: %s, Money gained: %d, Experience Gained: %d" % [winner.name, money_gained, exp_gained]
+	
