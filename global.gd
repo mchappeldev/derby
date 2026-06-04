@@ -3,9 +3,9 @@ extends Node
 enum RaceType { SLOW, QUICK, FAST }
 
 const RACES = {
-	RaceType.SLOW:  { "cost": 0,   "npc_speed": 10, "reward_win": 25,   "exp_win": 2,  "exp_lose": 1 },
-	RaceType.QUICK: { "cost": 50,  "npc_speed": 20, "reward_win": 150,  "exp_win": 5,  "exp_lose": 2 },
-	RaceType.FAST:  { "cost": 500, "npc_speed": 30, "reward_win": 1000, "exp_win": 10, "exp_lose": 3 },
+	RaceType.SLOW:  { "cost": 0,   "npc_speed": 10,  "npc_endurance": 10, "reward_win": 25,   "exp_win": 2,  "exp_lose": 1 },
+	RaceType.QUICK: { "cost": 50,  "npc_speed": 20, "npc_endurance": 20, "reward_win": 150,  "exp_win": 5,  "exp_lose": 2 },
+	RaceType.FAST:  { "cost": 500, "npc_speed": 30, "npc_endurance": 30, "reward_win": 1000, "exp_win": 10, "exp_lose": 3 },
 }
 
 #Horse Stats
@@ -20,3 +20,6 @@ var money: int = 0
 
 func _ready() -> void:
 	pass
+
+# Global State
+var race_started: bool = false

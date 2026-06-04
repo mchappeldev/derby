@@ -13,7 +13,6 @@ size = Vector2(22, 192)
 script = ExtResource("1_s6mr7")
 
 [node name="Ui" parent="." instance=ExtResource("5_le3jw")]
-visible = false
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("2_v320h")
@@ -44,3 +43,10 @@ script = ExtResource("4_0b1t8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_qxa5b")
+
+[node name="RaceStartTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="RaceStartTimer" to="." method="_race_start"]

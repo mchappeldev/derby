@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://menu/menu.gd" id="1_gtjfl"]
 [ext_resource type="PackedScene" uid="uid://co5tj6nx3k6eh" path="res://menu/menu_button.tscn" id="2_6lrtn"]
-[ext_resource type="PackedScene" uid="uid://cn2xfb3q1u5lk" path="res://game1/game_1.tscn" id="3_ulqrd"]
+[ext_resource type="PackedScene" uid="uid://dinoc61sxt5cf" path="res://stable/stable.tscn" id="3_wuajn"]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_gtjfl")
@@ -35,4 +35,4 @@ autowrap_mode = 0
 [node name="Game1Button" parent="Control/MarginContainer/BoxContainer/VBoxContainer" groups=["menu_buttons"] instance=ExtResource("2_6lrtn")]
 layout_mode = 2
 text = "Start"
-scene = ExtResource("3_ulqrd")
+scene = ExtResource("3_wuajn")

@@ -7,6 +7,7 @@ process_mode = 3
 script = ExtResource("1_wjfp4")
 
 [node name="Control" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -57,5 +58,14 @@ fit_content = true
 [node name="Button" type="Button" parent="Control/MarginContainer/BoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "Continue"
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(640, 40)
+offset_right = 4.0
+offset_bottom = 4.0
+max_value = 3.0
+step = -1.0
+value = 3.0
+show_percentage = false
 
 [connection signal="pressed" from="Control/MarginContainer/BoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

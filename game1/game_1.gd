@@ -1,15 +1,18 @@
 extends Node2D
 
 @onready var winner_text = $Ui/Control/MarginContainer/BoxContainer/VBoxContainer/Winner
+@onready var timer = $RaceStartTimer
+@onready var progress_bar = $Ui/ProgressBar
 
 func _ready() -> void:
 	$Area2D.race_finished.connect(_on_race_finished)
 
+func _race_start() -> void:
+	Global.race_started = true
 
 func _on_race_finished(winner: Node) -> void:
-	#get_tree().paused = true
 	calculate_experience(winner)
-	$Ui.visible = true
+	$Ui/Control.visible = true
 
 func calculate_experience(winner: Node) -> void:
 	var exp_gained: int
@@ -24,3 +27,7 @@ func calculate_experience(winner: Node) -> void:
 		Global.experience += exp_gained
 	winner_text.text = "Winner is: %s, Money gained: %d, Experience Gained: %d" % [winner.name, money_gained, exp_gained]
 	
+func _physics_process(_delta: float) -> void:
+	if timer.time_left > 0:
+		progress_bar.value = timer.time_left  
+ 
