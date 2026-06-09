@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cnl6oxqsv4gco"]
+
+[ext_resource type="Script" uid="uid://qwh43biay2qm" path="res://autoload/sound_manager.gd" id="1_08ara"]
+[ext_resource type="AudioStream" uid="uid://bcwbnn37kxw2c" path="res://assets/audio/pop4.wav" id="2_k2nfr"]
+
+[node name="SoundManager" type="Node" unique_id=1397405808]
+script = ExtResource("1_08ara")
+button_sound = ExtResource("2_k2nfr")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1568288701]
+unique_name_in_owner = true

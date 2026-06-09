@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cb1fmjg70qkph"
-path="res://.godot/imported/final-spring.png-eb76b690a34023840da729e8e8928eed.ctex"
+uid="uid://fc1yusw3tnkp"
+path="res://.godot/imported/border-tile-seasons.png-3b07f37fe773e39f1ea16d42412b6262.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/final-spring.png"
-dest_files=["res://.godot/imported/final-spring.png-eb76b690a34023840da729e8e8928eed.ctex"]
+source_file="res://menu/border-tile-seasons.png"
+dest_files=["res://.godot/imported/border-tile-seasons.png-3b07f37fe773e39f1ea16d42412b6262.ctex"]
 
 [params]
 

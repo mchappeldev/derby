@@ -37,6 +37,7 @@ func upgrade_stat(stat: String) -> void:
 		Global.player_horse.experience -= 1
 		Global.player_horse[stat] += 1
 		print("%s increased to: %d" % [stat, Global.player_horse[stat]])
+		play_sound()
 		update_ui()
 	else:
 		print("Not enough experience to increase %s." % stat)
@@ -47,12 +48,14 @@ func enter_race(race: String) -> void:
 	if Global.money >= cost:
 		Global.money -= cost
 		Global.race_difficulty = race_type
+		play_sound()
 		get_tree().change_scene_to_file("uid://cn2xfb3q1u5lk") #circuit_track UID
 
 func enter_harness_pull() -> void:
 	var cost = Global.PULLS[Global.pull_difficulty]["cost"]
 	if Global.money >= cost:
 		Global.money -= cost
+		play_sound()
 		get_tree().change_scene_to_file("res://harness_pull/pull_track.tscn")
 
 func update_ui() -> void:
@@ -66,3 +69,6 @@ func update_ui() -> void:
 	quick_race_button.disabled = Global.money < Global.RACES[Global.RaceType.QUICK]["cost"]
 	fast_race_button.disabled = Global.money < Global.RACES[Global.RaceType.FAST]["cost"]
 	harness_pull_button.disabled = Global.money < Global.PULLS[Global.pull_difficulty]["cost"]
+
+func play_sound() -> void:
+	SoundManager.play_sound(SoundManager.button_sound)
