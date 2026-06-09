@@ -1,0 +1,159 @@
+[gd_scene format=3 uid="uid://d1pull0track1"]
+
+[ext_resource type="Script" path="res://harness_pull/pull_track.gd" id="1_track"]
+
+[node name="PullTrack" type="Node2D"]
+script = ExtResource("1_track")
+
+[node name="Ui" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="Ui"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Top" type="HBoxContainer" parent="Ui/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.03
+anchor_right = 0.95
+anchor_bottom = 0.22
+grow_horizontal = 2
+theme_override_constants/separation = 40
+
+[node name="PlayerPanel" type="VBoxContainer" parent="Ui/Control/Top"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NameLabel" type="Label" parent="Ui/Control/Top/PlayerPanel"]
+layout_mode = 2
+text = "Player"
+
+[node name="DistBar" type="ProgressBar" parent="Ui/Control/Top/PlayerPanel"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+max_value = 100.0
+value = 100.0
+show_percentage = false
+
+[node name="EnduranceLabel" type="Label" parent="Ui/Control/Top/PlayerPanel"]
+layout_mode = 2
+text = "Endurance: 10/10"
+
+[node name="EnemyPanel" type="VBoxContainer" parent="Ui/Control/Top"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NameLabel" type="Label" parent="Ui/Control/Top/EnemyPanel"]
+layout_mode = 2
+horizontal_alignment = 2
+text = "Rival"
+
+[node name="DistBar" type="ProgressBar" parent="Ui/Control/Top/EnemyPanel"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+fill_mode = 1
+max_value = 100.0
+value = 100.0
+show_percentage = false
+
+[node name="EnduranceLabel" type="Label" parent="Ui/Control/Top/EnemyPanel"]
+layout_mode = 2
+horizontal_alignment = 2
+text = "Endurance: 10/10"
+
+[node name="Center" type="VBoxContainer" parent="Ui/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = 0.3
+anchor_right = 0.85
+anchor_bottom = 0.45
+grow_horizontal = 2
+alignment = 1
+
+[node name="StatusLabel" type="Label" parent="Ui/Control/Center"]
+layout_mode = 2
+horizontal_alignment = 1
+autowrap_mode = 2
+text = "Choose your move!"
+
+[node name="TimerBar" type="ProgressBar" parent="Ui/Control/Center"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+max_value = 5.0
+value = 5.0
+show_percentage = false
+
+[node name="Moves" type="HBoxContainer" parent="Ui/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.82
+anchor_right = 0.9
+anchor_bottom = 0.95
+grow_horizontal = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="PullButton" type="Button" parent="Ui/Control/Moves"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Pull"
+
+[node name="BraceButton" type="Button" parent="Ui/Control/Moves"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Brace"
+
+[node name="SlackButton" type="Button" parent="Ui/Control/Moves"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Give Slack"
+
+[node name="RestButton" type="Button" parent="Ui/Control/Moves"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Rest"
+
+[node name="Results" type="Panel" parent="Ui/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 0.3
+anchor_right = 0.75
+anchor_bottom = 0.65
+grow_horizontal = 2
+
+[node name="VBox" type="VBoxContainer" parent="Ui/Control/Results"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="ResultsLabel" type="Label" parent="Ui/Control/Results/VBox"]
+layout_mode = 2
+horizontal_alignment = 1
+autowrap_mode = 2
+text = "Results"
+
+[node name="BackButton" type="Button" parent="Ui/Control/Results/VBox"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Back to Stable"
+
+[node name="ChoiceTimer" type="Timer" parent="."]
+one_shot = true

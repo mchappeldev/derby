@@ -23,9 +23,9 @@ const speed_factor = 1.0  # Adjust this constant to scale overall movement
 
 func _ready() -> void:
 	if type == horse_type.player:
-		speed = Global.speed
-		jump = Global.jump
-		endurance = Global.endurance
+		speed = Global.player_horse.speed
+		jump = Global.player_horse.jump
+		endurance = Global.player_horse.endurance
 		perfect_start_speed_bonus = .05 * speed + 1.5
 		perfect_start_window = .1 * endurance
 

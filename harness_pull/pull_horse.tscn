@@ -1,10 +1,7 @@
 [gd_scene format=3 uid="uid://bw4jpr3lkjggm"]
 
-[ext_resource type="Script" uid="uid://bpkori5xc0bol" path="res://circuit_track/circuit_horse.gd" id="1_rr3om"]
+[ext_resource type="Script" path="res://harness_pull/pull_horse.gd" id="1_pull"]
 [ext_resource type="Texture2D" uid="uid://cg45jrh2u8ca3" path="res://assets/horse-belgian.png" id="2_qxxwa"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nn7sg"]
-size = Vector2(25, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ghenl"]
 atlas = ExtResource("2_qxxwa")
@@ -42,13 +39,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Horse" type="CharacterBody2D"]
-script = ExtResource("1_rr3om")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_nn7sg")
+[node name="Horse" type="Node2D"]
+script = ExtResource("1_pull")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_tk6t2")
 animation = &"walk"
-frame_progress = 0.0702019

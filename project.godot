@@ -21,6 +21,7 @@ config/icon="res://assets/icon.svg"
 
 [autoload]
 
+HorseRegistry="*res://horse/horse_registry.gd"
 Global="*res://global.gd"
 
 [display]

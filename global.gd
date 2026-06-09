@@ -8,18 +8,26 @@ const RACES = {
 	RaceType.FAST:  { "cost": 500, "npc_speed": 30, "npc_endurance": 30, "reward_win": 1000, "exp_win": 10, "exp_lose": 3 },
 }
 
-#Horse Stats
-var speed: int = 10
-var endurance: int = 10
-var jump: int = 10
-var experience: int = 0
-var race_difficulty: RaceType = RaceType.SLOW
+# Harness Pull events. Keyed like RACES so more tiers can be added later.
+enum PullType { LOCAL }
 
-#Player Stats
+const PULLS = {
+	PullType.LOCAL: { "cost": 0, "npc_breed": "belgian", "npc_strength": 10, "npc_endurance": 10, "reward_win": 75, "exp_win": 4, "exp_lose": 2 },
+}
+
+# The player's active horse. All stats now live on this object instead of as
+# flat globals. Minted from a breed via the HorseRegistry autoload.
+var player_horse: HorseData
+
+# Player Stats
 var money: int = 0
 
-func _ready() -> void:
-	pass
+# Selected event difficulty/tier.
+var race_difficulty: RaceType = RaceType.SLOW
+var pull_difficulty: PullType = PullType.LOCAL
 
 # Global State
 var race_started: bool = false
+
+func _ready() -> void:
+	player_horse = HorseRegistry.instance("belgian")
