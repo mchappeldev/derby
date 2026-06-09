@@ -1,6 +1,9 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://dg4v7o2ctrdfa"]
+[gd_resource type="TileSet" format=3 uid="uid://dg4v7o2ctrdfa"]
 
 [ext_resource type="Texture2D" uid="uid://cb1fmjg70qkph" path="res://assets/final-spring.png" id="1_c8im6"]
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_wwfy2"]
+tile_data = PackedInt32Array(0, 589825, 4, 65536, 589825, 5, 131072, 589825, 6, 196608, 589825, 7, 262144, 589825, 8, 1, 655361, 4, 65537, 655361, 5, 131073, 655361, 6, 196609, 655361, 7, 262145, 655361, 8, 2, 720897, 4, 65538, 720897, 5, 131074, 720897, 6, 196610, 720897, 7, 262146, 720897, 8, 3, 786433, 4, 65539, 786433, 5, 131075, 786433, 6, 196611, 786433, 7, 262147, 786433, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ypoj3"]
 texture = ExtResource("1_c8im6")
@@ -352,3 +355,4 @@ texture = ExtResource("1_c8im6")
 
 [resource]
 sources/1 = SubResource("TileSetAtlasSource_ypoj3")
+pattern_0 = SubResource("TileMapPattern_wwfy2")

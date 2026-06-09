@@ -17,7 +17,7 @@ func _on_race_finished(winner: Node) -> void:
 func calculate_experience(winner: Node) -> void:
 	var exp_gained: int
 	var money_gained: int = 0
-	if winner.type == horse.horse_type.player:
+	if winner.type == circuit_horse.horse_type.player:
 		exp_gained = Global.RACES[Global.race_difficulty]["exp_win"]
 		money_gained = Global.RACES[Global.race_difficulty]["reward_win"]
 		Global.money += money_gained

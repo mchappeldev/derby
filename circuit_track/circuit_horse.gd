@@ -1,4 +1,4 @@
-class_name horse
+class_name circuit_horse
 
 extends CharacterBody2D
 

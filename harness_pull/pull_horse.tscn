@@ -1,25 +1,25 @@
-[gd_scene load_steps=9 format=3 uid="uid://d257ncv26fi0y"]
+[gd_scene format=3 uid="uid://bw4jpr3lkjggm"]
 
-[ext_resource type="Script" path="res://game1/horse.gd" id="1_vby7h"]
-[ext_resource type="Texture2D" uid="uid://cg45jrh2u8ca3" path="res://assets/horse-belgian.png" id="2_eb525"]
+[ext_resource type="Script" uid="uid://bpkori5xc0bol" path="res://circuit_track/circuit_horse.gd" id="1_rr3om"]
+[ext_resource type="Texture2D" uid="uid://cg45jrh2u8ca3" path="res://assets/horse-belgian.png" id="2_qxxwa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nn7sg"]
 size = Vector2(25, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ghenl"]
-atlas = ExtResource("2_eb525")
+atlas = ExtResource("2_qxxwa")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jqm7p"]
-atlas = ExtResource("2_eb525")
+atlas = ExtResource("2_qxxwa")
 region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_25lrr"]
-atlas = ExtResource("2_eb525")
+atlas = ExtResource("2_qxxwa")
 region = Rect2(64, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e1210"]
-atlas = ExtResource("2_eb525")
+atlas = ExtResource("2_qxxwa")
 region = Rect2(96, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tk6t2"]
@@ -43,7 +43,7 @@ animations = [{
 }]
 
 [node name="Horse" type="CharacterBody2D"]
-script = ExtResource("1_vby7h")
+script = ExtResource("1_rr3om")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_nn7sg")

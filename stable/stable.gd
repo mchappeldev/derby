@@ -42,7 +42,7 @@ func enter_race(race: String) -> void:
 	if Global.money >= cost:
 		Global.money -= cost
 		Global.race_difficulty = race_type
-		get_tree().change_scene_to_file("res://game1/game_1.tscn")
+		get_tree().change_scene_to_file("uid://cn2xfb3q1u5lk") #circuit_track UID
 
 func update_ui() -> void:
 	speed_amount_label.text = str(Global.speed)
